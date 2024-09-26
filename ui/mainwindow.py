@@ -23,8 +23,8 @@ SOFTWARE.
 """
 
 import os, mimetypes, filecmp
-from difflibparser.difflibparser import *
-from ui.mainwindow_ui import MainWindowUI
+from ..difflibparser.difflibparser import *
+from ..ui.mainwindow_ui import MainWindowUI
 try:    # for Python2
     from Tkinter import *
     from tkFileDialog import askopenfilename, askdirectory
@@ -215,10 +215,13 @@ class MainWindow:
         try:
             leftFileContents = open(self.leftFile).read()
         except:
+            pass
             leftFileContents = ''
+
         try:
             rightFileContents = open(self.rightFile).read()
         except:
+            pass
             rightFileContents = ''
 
         diff = DifflibParser(leftFileContents.splitlines(), rightFileContents.splitlines())
@@ -228,7 +231,7 @@ class MainWindow:
         self.__main_window_ui.rightFileTextArea.config(state=NORMAL)
         self.__main_window_ui.leftLinenumbers.config(state=NORMAL)
         self.__main_window_ui.rightLinenumbers.config(state=NORMAL)
-
+        # [TODO]
         # clear all text areas
         self.__main_window_ui.leftFileTextArea.delete(1.0, END)
         self.__main_window_ui.rightFileTextArea.delete(1.0, END)

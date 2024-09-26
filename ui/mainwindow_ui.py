@@ -35,7 +35,7 @@ except ImportError:    # for Python3
     from tkinter import ttk
     from tkinter.ttk import Treeview
 import os
-from ui.searchtextdialog import *
+from ..ui.searchtextdialog import *
 
 class MainWindowUI:
 

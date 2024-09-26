@@ -23,16 +23,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from ui.mainwindow import *
-import argparse, sys
+from .ui.mainwindow import *
+# import argparse, sys
 
-parser = argparse.ArgumentParser(description="pydiff - Tkinter GUI tool based on Python's difflib")
-parser.add_argument('-p', '--paths', metavar=('path1', 'path2'), nargs=2, help='Two paths to compare', required=False)
+# parser = argparse.ArgumentParser(description="pydiff - Tkinter GUI tool based on Python's difflib")
+# parser.add_argument('-p', '--paths', metavar=('path1', 'path2'), nargs=2, help='Two paths to compare', required=False)
 
-args = parser.parse_args()
+# args = parser.parse_args()
 
-leftpath = args.paths[0] if args.paths else None
-rightpath = args.paths[1] if args.paths else None
-
-main_window = MainWindow()
-main_window.start(leftpath, rightpath)
+# leftpath = args.paths[0] if args.paths else None
+# rightpath = args.paths[1] if args.paths else None
+def run_diff_tool(left_path=None, right_path=None):
+    main_window = MainWindow()
+    main_window.start(left_path, right_path)
